@@ -16,7 +16,7 @@ function TabBarIcon(props: {
   return <FontAwesome size={28} style={styles.tabBarIcon} {...props} />;
 }
 
-type Props = StackScreenProps<RootStackParamList, 'TabNavigator'>;
+type Props = StackScreenProps<RootStackParamList, 'Tabs'>;
 
 export default function TabLayout({ navigation }: Props) {
   return (

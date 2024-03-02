@@ -18,6 +18,8 @@ export default function DrawerNavigator({ navigation }: Props) {
         name="Home"
         component={Home}
         options={{
+          headerTransparent: true,
+          headerTintColor: '#fff',
           drawerIcon: ({ size, color }) => (
             <Ionicons name="home-outline" size={size} color={color} />
           ),

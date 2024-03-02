@@ -1,12 +1,15 @@
-import { Theme, YStack } from 'tamagui';
+import { Theme, View, YStack, useWindowDimensions } from 'tamagui';
 
-import { SkiaHelloWorld } from '../components';
+import { Breathe } from '../components';
 
 const Page = () => {
+  const { width } = useWindowDimensions();
   return (
     <Theme name="light">
       <YStack flex={1} alignItems="center" justifyContent="center">
-        <SkiaHelloWorld />
+        <View flex={1} width={width}>
+          <Breathe />
+        </View>
       </YStack>
     </Theme>
   );

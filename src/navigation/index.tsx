@@ -7,7 +7,7 @@ import Modal from '../screens/modal';
 export type RootStackParamList = {
   DrawerNavigator: undefined;
   Modal: undefined;
-  TabNavigator: undefined;
+  Tabs: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
