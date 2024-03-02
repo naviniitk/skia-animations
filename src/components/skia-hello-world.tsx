@@ -1,7 +1,6 @@
-import { Canvas, Circle, Group, Rect } from '@shopify/react-native-skia';
+import { Canvas, Circle, Group } from '@shopify/react-native-skia';
 import React from 'react';
 import { Pressable } from 'react-native';
-import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 
 const AnimatedCanvas = Animated.createAnimatedComponent(Canvas);
@@ -11,16 +10,6 @@ export default function SkiaHelloWorld() {
   const height = 256;
   const r = width * 0.33;
   const scale = useSharedValue(1);
-
-  const tap = Gesture.Tap()
-    .onStart(() => {
-      scale.value = 1.2;
-      console.log(scale.value);
-    })
-    .onEnd(() => {
-      // scale.value = 1;
-      console.log(scale.value);
-    });
 
   const animatedScale = useAnimatedStyle(() => {
     return {
