@@ -1,4 +1,4 @@
-import { Circle, Group, mix, polar2Canvas, vec } from '@shopify/react-native-skia';
+import { Circle, mix, polar2Canvas, vec } from '@shopify/react-native-skia';
 import { useMemo } from 'react';
 import { SharedValue, useDerivedValue } from 'react-native-reanimated';
 import { useWindowDimensions } from 'tamagui';
@@ -19,15 +19,11 @@ const Ring = ({ index, progress }: RingProps) => {
   const theta = (index * (2 * Math.PI)) / 6;
   const transform = useDerivedValue(() => {
     const { x, y } = polar2Canvas({ theta, radius: progress.value * R }, { x: 0, y: 0 });
-    const scale = mix(progress.value, 0.3, 1);
+    const scale = mix(progress.value, 0.1, 1);
     return [{ translateX: x }, { translateY: y }, { scale }];
   }, [progress]);
 
-  return (
-    <Group origin={center} transform={transform}>
-      <Circle c={center} r={R} color={index % 2 ? c1 : c2} />
-    </Group>
-  );
+  return <Circle c={center} r={R} color={index % 2 ? c1 : c2} transform={transform} />;
 };
 
 export default Ring;
