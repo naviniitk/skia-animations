@@ -16,7 +16,7 @@ const Ring = ({ index, progress }: RingProps) => {
   const R = width / 4;
   const center = useMemo(() => vec(width / 2, height / 2), [height, width]);
 
-  const theta = (index * (2 * Math.PI)) / 6;
+  const theta = (index * (2 * Math.PI)) / 4;
   const transform = useDerivedValue(() => {
     const { x, y } = polar2Canvas({ theta, radius: progress.value * R }, { x: 0, y: 0 });
     const scale = mix(progress.value, 0.1, 1);
